@@ -1,0 +1,34 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# dbt
+dbt/logs/
+dbt/*/target/
+dbt/*/logs/
+dbt/*/dbt_packages/
+dbt/*/packages.yml.lock
+dbt/*/target/
+dbt/*/logs/
+dbt/*/dbt_packages/
+dbt/*/packages.yml.lock
+
+# Data
+data/raw/
+data/processed/
+
+# Power BI
+*.pbix.autosave
+
+# OS
+.DS_Store
+Thumbs.db

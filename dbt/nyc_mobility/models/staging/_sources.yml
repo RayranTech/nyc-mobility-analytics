@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Dados brutos das viagens de táxi amarelo da NYC TLC."
+    schema: raw
+
+    tables:
+      - name: yellow_trips
+        description: "Registros brutos das viagens de táxi amarelo utilizados no projeto."

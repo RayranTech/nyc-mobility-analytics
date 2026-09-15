@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: stg_yellow_trips
+    description: "Camada de staging das viagens de táxi amarelo, com padronização de nomes e remoção de registros com duração inválida."
+
+    columns:
+      - name: vendor_id
+        description: "Identificador do provedor do serviço de táxi."
+
+      - name: tpep_pickup_datetime
+        description: "Data e hora de início da viagem."
+        tests:
+          - not_null
+
+      - name: tpep_dropoff_datetime
+        description: "Data e hora de término da viagem."
+        tests:
+          - not_null
+
+      - name: passenger_count
+        description: "Quantidade de passageiros registrada na viagem."
+
+      - name: trip_distance
+        description: "Distância percorrida durante a viagem, em milhas."
+        tests:
+          - not_null
+
+      - name: ratecode_id
+        description: "Identificador do tipo de tarifa aplicado."
+
+      - name: store_and_fwd_flag
+        description: "Indicador relacionado ao armazenamento e encaminhamento dos registros."
+
+      - name: pu_location_id
+        description: "Identificador da zona de embarque."
+
+      - name: do_location_id
+        description: "Identificador da zona de desembarque."
+
+      - name: payment_type
+        description: "Código do tipo de pagamento utilizado."
+
+      - name: fare_amount
+        description: "Valor da tarifa da viagem."
+
+      - name: extra
+        description: "Valor de cobranças adicionais."
+
+      - name: mta_tax
+        description: "Valor da taxa MTA."
+
+      - name: tip_amount
+        description: "Valor da gorjeta registrada."
+
+      - name: tolls_amount
+        description: "Valor das tarifas de pedágio."
+
+      - name: improvement_surcharge
+        description: "Valor da taxa de melhoria."
+
+      - name: total_amount
+        description: "Valor total registrado para a viagem."
+        tests:
+          - not_null
+
+      - name: congestion_surcharge
+        description: "Valor da taxa de congestionamento."
+
+      - name: airport_fee
+        description: "Valor da taxa relacionada ao aeroporto."
