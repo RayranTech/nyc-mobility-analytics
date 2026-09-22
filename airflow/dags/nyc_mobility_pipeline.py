@@ -17,7 +17,11 @@ with DAG(
 
     download_data = BashOperator(
         task_id="download_data",
-        bash_command="echo 'Arquivo Parquet já disponível'",
+        bash_command=f"""
+            set -e
+            cd {PROJECT_DIR}
+            {PROJECT_DIR}/airflow/.venv/bin/python python/download_data.py
+        """,
     )
 
     load_postgres = BashOperator(
