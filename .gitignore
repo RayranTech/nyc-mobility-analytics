@@ -1,3 +1,4 @@
+
 # Python
 .venv/
 __pycache__/
@@ -11,12 +12,13 @@ __pycache__/
 logs/
 *.log
 
+# Airflow
+airflow.cfg
+airflow.db
+airflow-webserver.pid
+
 # dbt
 dbt/logs/
-dbt/*/target/
-dbt/*/logs/
-dbt/*/dbt_packages/
-dbt/*/packages.yml.lock
 dbt/*/target/
 dbt/*/logs/
 dbt/*/dbt_packages/
@@ -32,3 +34,4 @@ data/processed/
 # OS
 .DS_Store
 Thumbs.db
+dbt/profiles/.user.yml
