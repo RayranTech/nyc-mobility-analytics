@@ -1,10 +1,11 @@
+from pathlib import Path
 from datetime import datetime
 
 from airflow.sdk import DAG
 from airflow.providers.standard.operators.bash import BashOperator
 
 
-PROJECT_DIR = "/mnt/c/Documentos/Rayran/Projetos/nyc-mobility-analytics"
+PROJECT_DIR = Path(__file__).resolve().parents[2]
 
 with DAG(
     dag_id="nyc_mobility_pipeline",
